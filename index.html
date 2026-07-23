@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Opening RE...</title>
+    <script>
+        window.onload = function() {
+            // Extract post ID from URL path
+            // URL will be: gabrielepulito11.github.io/re-app/post/abc123
+            const segments = window.location.pathname.split('/');
+            const type = segments[2];     // "post"
+            const id   = segments[3];     // "abc123"
+
+            if (type && id) {
+                // Try to open the app
+                window.location = "re.gab://" + type + "/" + id;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Opening RE app...</p>
+</body>
+</html>
