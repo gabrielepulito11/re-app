@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Opening RE...</title>
+    <script>
+        window.onload = function() {
+            // URL: gabrielepulito11.github.io/re-app/post/abc123
+            const segments = window.location.pathname.split('/').filter(Boolean);
+            // segments = ["re-app", "post", "abc123"]
+            const type = segments[1];  // "post"
+            const id   = segments[2];  // "abc123"
+
+            if (type && id) {
+                // Redirect to custom scheme — opens the app
+                window.location.href = "re.gab://" + type + "/" + id;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Opening RE app...</p>
+</body>
+</html>
