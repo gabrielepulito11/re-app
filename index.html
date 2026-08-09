@@ -5,15 +5,13 @@
     <title>Opening RE...</title>
     <script>
         window.onload = function() {
-            // Extract post ID from URL path
-            // URL will be: gabrielepulito11.github.io/re-app/post/abc123
-            const segments = window.location.pathname.split('/');
-            const type = segments[2];     // "post"
-            const id   = segments[3];     // "abc123"
+            const segments = window.location.pathname.split('/').filter(Boolean);
+            // segments = ["re-app", "post"/"profile", "id"]
+            const type = segments[1];
+            const id   = segments[2];
 
             if (type && id) {
-                // Try to open the app
-                window.location = "re.gab://" + type + "/" + id;
+                window.location.href = "re.gab://" + type + "/" + id;
             }
         }
     </script>
