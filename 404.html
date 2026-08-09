@@ -5,14 +5,12 @@
     <title>Opening RE...</title>
     <script>
         window.onload = function() {
-            // URL: gabrielepulito11.github.io/re-app/post/abc123
             const segments = window.location.pathname.split('/').filter(Boolean);
-            // segments = ["re-app", "post", "abc123"]
-            const type = segments[1];  // "post"
-            const id   = segments[2];  // "abc123"
+            // segments = ["re-app", "post"/"profile", "id"]
+            const type = segments[1];
+            const id   = segments[2];
 
             if (type && id) {
-                // Redirect to custom scheme — opens the app
                 window.location.href = "re.gab://" + type + "/" + id;
             }
         }
